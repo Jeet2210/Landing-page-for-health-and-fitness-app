@@ -1,0 +1,118 @@
+<div class="background-overlay">
+
+  <form action="afterlogin.html" method="post">
+    <p>User Name</p>
+    <div>
+      <input id="username" type="text" placeholder="Enter your Username" class="username">
+    </div>
+    <p class="password_tag">Password</p>
+    <div>
+      <input type="password" placeholder="Enter your Password">
+    </div>
+    <p style="text-align: center;">Forgot Password/Username? <br> New User/Registration?</p>
+
+    <button onclick="login()">Log in</button>
+  </form>
+
+  <script>
+    function login() {
+      var username = document.getElementById("username").value;
+      sessionStorage.setItem("username", username);
+      window.location.href = "afterlogin.html";
+    }
+  </script>
+
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('bg.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      height: 100vh;
+    }
+
+    .background-overlay {
+      background-color: rgba(1, 1, 14, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    p {
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .forget {
+      color: #888;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+
+    .user i,
+    .password i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 10px;
+      color: #888;
+    }
+
+
+    @media (max-width: 480px) {
+      form {
+        padding: 15px;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
